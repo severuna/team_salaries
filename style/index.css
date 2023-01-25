@@ -59,3 +59,12 @@ input {
     color: azure;
     font-size: 1.8rem;
 }
+/* add button styles */
+.btn {
+    width: 20rem;
+    height: 3rem;
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 0.25rem solid gray;
+    color: azure;
+}
