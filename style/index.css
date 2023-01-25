@@ -95,3 +95,20 @@ input {
     flex-direction: row;
     gap: 2rem;
 }
+/* add entered-out block styles */ 
+.entered-out {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem 3rem;
+}
+/* add item entered styles */ 
+.out-item {
+    text-align: left;
+    font-size: 1.5rem;
+    border: 1px solid gray;
+    padding: 2rem;
+    width: 15rem;
+}
