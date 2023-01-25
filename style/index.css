@@ -2,6 +2,7 @@
 html {
     font-size: 10px;
     background-color: rgba(0, 0, 0, 0.8);
+    color: azure;
 }
 /* remove indents from all elements */
 * {
@@ -13,5 +14,48 @@ html {
     text-align: center;
     margin: 2rem auto;
     font-size: 4rem;
+}
+/* add input block style */
+.input {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2rem;
+    justify-content: space-around;
+}
+/* add block styles */ 
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    border: 0.25rem solid gray;
+}
+/* add title block styles */
+.block-title {
+    font-size: 2.6rem;
+}
+/* add form styles */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+/* add styles for form fields */
+.form-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+}
+/* add label styles */
+label {
+    font-size: 2rem;
+}
+/* add input styles */
+input {
+    border: 0.25rem solid gray;
+    background-color: rgba(0, 0, 0, 0.8);
     color: azure;
+    font-size: 1.8rem;
 }
