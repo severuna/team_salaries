@@ -68,3 +68,30 @@ input {
     border: 0.25rem solid gray;
     color: azure;
 }
+/* add entered styles */
+.entered {
+    margin: 2rem;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+/* add output styles */
+.output {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+/* add output header styles */
+.output-title {
+    font-size: 3.3rem;
+}
+/* add styles to the result block */
+.output-res {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
