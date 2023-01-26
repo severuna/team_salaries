@@ -1,3 +1,23 @@
+// class for salaries 
+class Salary {
+    constructor(salary, tax) {
+        this.salary = salary;
+        this.tax = tax;
+    }
+    // create a function to calculate the cost
+    getFullSalary () {
+        return Number(this.salary) + Number(this.salary) * (Number(this.tax.slice(0, 2)) / 100);
+    }
+}
+// obj list for spec 
+const specList = {};
+// function to create a salary instance
+const createSalaryInstance = (instanceName, instanceSalary, instanceTax) => {
+    specList[`${instanceName.value}`] = new Salary(instanceSalary.value, instanceTax.value);
+    // return the element
+    return specList;
+}
+
 // function to display each form field
 const showDataItem = (data, nameItem) => {
     // create an element to display form field data
@@ -13,8 +33,28 @@ const showSalariesItem = (data) => {
     const inputItem = document.createElement('div');
     // add a class for the container
     inputItem.classList = 'out-item';
+    createSalaryInstance(data.specialization, data.salary, data.tax)
     // add the result of the display function to the element
+    const itemList = document.querySelectorAll('.out-item');
     inputItem.append(showDataItem(data.specialization, 'Specialization'), showDataItem(data.salary, 'Salary'), showDataItem(data.tax, 'Tax'));
+    // sorting through the salary elements available in the list
+    for(const char in [...itemList]) {
+        if([...itemList][char].textContent != inputItem.textContent) {
+            // return the element
+            inputItem;
+        } else {
+            // create a block to display an error if an attempt is made to add an existing value
+            const errorBlock = document.createElement('div');
+            errorBlock.classList = 'error';
+            errorBlock.textContent = 'The item is available in the list! Enter another value!';
+            document.body.append(errorBlock);
+            // automatic removal of the error block after 3 seconds
+            setTimeout(function () {
+                errorBlock.remove()
+                }, 2000)
+                // return the element
+            return errorBlock;
+    }}
     // return the element
     return inputItem;
 };
@@ -62,5 +102,4 @@ addEmpl.addEventListener('click', (e) => {
     container.append(showTeamItem(teamForm))
     // add the result of functions of receiving, transmitting and displaying form data in the DOM
     document.querySelector('.team-out').append(container);
-});
-
+})

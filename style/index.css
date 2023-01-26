@@ -113,3 +113,16 @@ input {
     padding: 2rem;
     width: 15rem;
 }
+.error {
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    right: 20%;
+    border: 1px solid black;
+    border-radius: 3rem;
+    padding: 3rem 4rem;
+    background-color: brown;
+    color: azure;
+    font-size: 5rem;
+    text-align: center;
+}
