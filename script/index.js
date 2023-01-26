@@ -11,11 +11,31 @@ class Salary {
 }
 // obj list for spec 
 const specList = {};
+
 // function to create a salary instance
 const createSalaryInstance = (instanceName, instanceSalary, instanceTax) => {
     specList[`${instanceName.value}`] = new Salary(instanceSalary.value, instanceTax.value);
     // return the element
     return specList;
+}
+
+// the beginning of the development of the function of budget calculations
+let budgetItem = 0;
+const showBudgetItem = (cost) => {
+    console.log(typeof cost)
+    budgetItem += Number(cost);
+    console.log(typeof cost)
+    return budgetItem;
+}
+const searchSal = (data, member) => {
+    console.log(data, member)
+    for(const char in data) {
+        if(char == member.value) {
+            console.log(showBudgetItem(data[char].salary))
+        } else {
+            console.log('-')
+        }
+    }
 }
 
 // function to display each form field
@@ -81,25 +101,9 @@ const showTeamItem = (data) => {
     // add a class for the container
     inputItem.classList = 'out-item';
     // add the result of the display function to the element
-    const itemList = document.querySelectorAll('.out-item');
-    // add the result of the display function to the element
     inputItem.append(showDataItem(data.name, 'Name'), showDataItem(data.spec, 'Specialization'));
-    for(const char in [...itemList]) {
-        if([...itemList][char].textContent != inputItem.textContent) {
-            // return the element
-        } else {
-            // create a `block to display an error if an attempt is made to add an existing value
-            const errorBlock = document.createElement('div');
-            errorBlock.classList = 'error';
-            errorBlock.textContent = 'The item is available in the list! Enter another value!';
-            document.body.append(errorBlock);
-            // automatic removal of the error block after 3 seconds
-            setTimeout(function () {
-                errorBlock.remove()
-                }, 2000)
-                // return the element
-            return errorBlock;
-    }}
+    // passing arguments to the budget calculation function
+    searchSal(specList, data.spec);
     // return the element
     return inputItem;
 };
@@ -119,4 +123,5 @@ addEmpl.addEventListener('click', (e) => {
     container.append(showTeamItem(teamForm))
     // add the result of functions of receiving, transmitting and displaying form data in the DOM
     document.querySelector('.team-out').append(container);
-})
+});
+
