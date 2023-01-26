@@ -32,7 +32,7 @@ html {
     border: 0.25rem solid gray;
 }
 /* add title block styles */
-.block-title {
+.block-title, .entered-title {
     font-size: 2.6rem;
 }
 /* add form styles */
@@ -67,6 +67,7 @@ input {
     background-color: rgba(0, 0, 0, 0.2);
     border: 0.25rem solid gray;
     color: azure;
+    margin: 0 auto;
 }
 /* add entered styles */
 .entered {
@@ -96,7 +97,7 @@ input {
     gap: 2rem;
 }
 /* add entered-out block styles */ 
-.entered-out {
+.salaries-out {
     display: flex;
     justify-content: left;
     flex-wrap: wrap;

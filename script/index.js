@@ -33,5 +33,5 @@ addSpec.addEventListener('click', (e) => {
     // add to the container the result of the function of transferring and displaying the data of the form fields
     container.append(showInputItem(salariesForm))
     // add the result of functions of receiving, transmitting and displaying form data in the DOM
-    document.querySelector('.entered-out').append(container);
+    document.querySelector('.salaries-out').append(container);
 });
