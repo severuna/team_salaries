@@ -97,7 +97,7 @@ input {
     gap: 2rem;
 }
 /* add entered-out block styles */ 
-.salaries-out {
+.salaries-out, .team-out {
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
