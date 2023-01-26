@@ -1,5 +1,5 @@
 <h1 align="center">Team salaries</a> 
-<p>This project will make it possible to obtain the salary budget in general and by specialization categories.
+#### This project will make it possible to obtain the salary budget in general and by specialization categories.
 In the "Salaries" form, you need to enter specialization, salary and tax. Upon confirmation, data from the form is read and displayed in the DOM in the form of a list. Identical elements are not added. When trying to add the same items, an error message is displayed that ticks after 3 seconds. The entered data is passed to the corresponding functions for calculation (in the implementation process).
 In the "Team" form, user actions and feedback on them are similar. At the moment, some functions are in the process of implementation.
-In the "Total budget" block, the calculation and output of salaries by specialization categories and the total amount of all categories will be implemented.</p>
+In the "Total budget" block, the calculation and output of salaries by specialization categories and the total amount of all categories will be implemented.
