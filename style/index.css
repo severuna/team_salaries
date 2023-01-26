@@ -31,10 +31,6 @@ html {
     padding: 2rem;
     border: 0.25rem solid gray;
 }
-/* add title block styles */
-.block-title, .entered-title {
-    font-size: 2.6rem;
-}
 /* add form styles */
 .form {
     display: flex;
@@ -70,13 +66,17 @@ input {
     margin: 0 auto;
 }
 /* add entered styles */
-.entered {
-    margin: 2rem;
+.entered, .entered-out {
+    margin: 1rem;
     padding: 2rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+/* add title block styles */
+.entered-title {
+    font-size: 2.6rem;
 }
 /* add output styles */
 .output {
