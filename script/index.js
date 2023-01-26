@@ -41,9 +41,8 @@ const showSalariesItem = (data) => {
     for(const char in [...itemList]) {
         if([...itemList][char].textContent != inputItem.textContent) {
             // return the element
-            inputItem;
         } else {
-            // create a block to display an error if an attempt is made to add an existing value
+            // create a `block to display an error if an attempt is made to add an existing value
             const errorBlock = document.createElement('div');
             errorBlock.classList = 'error';
             errorBlock.textContent = 'The item is available in the list! Enter another value!';
