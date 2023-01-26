@@ -81,7 +81,25 @@ const showTeamItem = (data) => {
     // add a class for the container
     inputItem.classList = 'out-item';
     // add the result of the display function to the element
+    const itemList = document.querySelectorAll('.out-item');
+    // add the result of the display function to the element
     inputItem.append(showDataItem(data.name, 'Name'), showDataItem(data.spec, 'Specialization'));
+    for(const char in [...itemList]) {
+        if([...itemList][char].textContent != inputItem.textContent) {
+            // return the element
+        } else {
+            // create a `block to display an error if an attempt is made to add an existing value
+            const errorBlock = document.createElement('div');
+            errorBlock.classList = 'error';
+            errorBlock.textContent = 'The item is available in the list! Enter another value!';
+            document.body.append(errorBlock);
+            // automatic removal of the error block after 3 seconds
+            setTimeout(function () {
+                errorBlock.remove()
+                }, 2000)
+                // return the element
+            return errorBlock;
+    }}
     // return the element
     return inputItem;
 };
