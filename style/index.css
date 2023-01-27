@@ -80,21 +80,22 @@ input {
 }
 /* add output styles */
 .output {
-    padding: 2rem;
+    padding: 3rem 5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    align-items: center;
 }
 /* add output header styles */
 .output-title {
     font-size: 3.3rem;
+    font-weight: 900;
 }
 /* add styles to the result block */
 .output-res {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 2rem;
+    justify-content: left;
 }
 /* add entered-out block styles */ 
 .salaries-out, .team-out {
@@ -113,6 +114,7 @@ input {
     padding: 2rem;
     width: 15rem;
 }
+/* add error block styles */
 .error {
     position: fixed;
     top: 20%;
@@ -125,4 +127,19 @@ input {
     color: azure;
     font-size: 5rem;
     text-align: center;
+}
+/* add res item styles */
+.res-item {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+/* add span res item styles */
+.res-item span {
+    display: inline-block;
+    font-size: 2.8rem;
+    font-weight: 800;
+    border: 2px solid azure;
+    padding: 0.2rem 0.7rem;
+    min-height: 3.5rem;
+    min-width: 6rem;
 }

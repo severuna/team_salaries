@@ -5,39 +5,43 @@ class Salary {
         this.tax = tax;
     }
     // create a function to calculate the cost
-    getFullSalary () {
+    getItemSalary () {
         return Number(this.salary) + Number(this.salary) * (Number(this.tax.slice(0, 2)) / 100);
+    }
+    // create a proto func to calculate the total spec budget
+    getTotalBudgetSalary () {
+        let totalSpecBudget = 0;
+        return totalSpecBudget += this.getItemSalary();
     }
 }
 // obj list for spec 
 const specList = {};
-
 // function to create a salary instance
 const createSalaryInstance = (instanceName, instanceSalary, instanceTax) => {
     specList[`${instanceName.value}`] = new Salary(instanceSalary.value, instanceTax.value);
     // return the element
     return specList;
 }
-
 // the beginning of the development of the function of budget calculations
 let budgetItem = 0;
 const showBudgetItem = (cost) => {
-    console.log(typeof cost)
     budgetItem += Number(cost);
-    console.log(typeof cost)
     return budgetItem;
 }
+// the function of checking the presence of an employee's specialization in the list
 const searchSal = (data, member) => {
-    console.log(data, member)
     for(const char in data) {
         if(char == member.value) {
-            console.log(showBudgetItem(data[char].salary))
-        } else {
-            console.log('-')
+            showTotalBudget(showBudgetItem(data[char].getTotalBudgetSalary()))
         }
     }
 }
-
+// the function of displaying total budget
+const showTotalBudget = (total) => {
+    const containerTotalBudget = document.querySelector('#total > span');
+    containerTotalBudget.textContent = total;
+    return containerTotalBudget;
+}
 // function to display each form field
 const showDataItem = (data, nameItem) => {
     // create an element to display form field data
