@@ -28,10 +28,39 @@ const showBudgetItem = (cost) => {
     budgetItem += Number(cost);
     return budgetItem;
 }
+// 
+const showSpecBudget = (spec, number, specList) => {
+    let str = ''
+    for (const char in specList) {
+        if(spec == char) {
+            str = specList[char].getItemSalary() * number;
+        }
+    }
+    return str;
+}
+// calculation of specializations and their number, show the budget for specializations
+const specArrCalc = (arr) => {
+    let result = {};
+    arr.forEach(function(a){
+        result[a] = result[a] + 1 || 1;
+    });
+    let str = [];
+    const containerSpecBudget = document.querySelector('#category > span');
+    for (var key in result) {
+        str.push(' ' + key + ' : ' + specList[key].getItemSalary() * result[key]);
+    }
+    containerSpecBudget.textContent = str;
+    return containerSpecBudget;
+}
+// array of specializations
+const specArr = []
 // the function of checking the presence of an employee's specialization in the list
 const searchSal = (data, member) => {
     for(const char in data) {
         if(char == member.value) {
+            // add specialties to the array for their calculation and further output
+            specArr.push(member.value)
+            specArrCalc(specArr)
             showTotalBudget(showBudgetItem(data[char].getTotalBudgetSalary()))
         }
     }
